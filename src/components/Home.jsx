@@ -2,10 +2,12 @@ import React from 'react';
 import './Common.css';
 import 'semantic-ui-css/semantic.min.css'
 
-import DatePicker from "react-datepicker"
+import DatePicker, { registerLocale } from "react-datepicker"
+import ja from 'date-fns/locale/ja';
 import "react-datepicker/dist/react-datepicker.css"
 
 const Today = new Date();
+registerLocale('ja', ja);
 
 class Home extends React.Component {
   render() {
@@ -17,6 +19,7 @@ class Home extends React.Component {
               <label><i className="calendar alternate outline icon"></i>プレー日</label>
               <DatePicker
                 dateFormat="yyyy/MM/dd"
+                locale='ja'
                 selected={Today}
                 minDate={Today}
               />
