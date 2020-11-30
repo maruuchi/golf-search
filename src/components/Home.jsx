@@ -2,6 +2,11 @@ import React from 'react';
 import './Common.css';
 import 'semantic-ui-css/semantic.min.css'
 
+import DatePicker from "react-datepicker"
+import "react-datepicker/dist/react-datepicker.css"
+
+const Today = new Date();
+
 class Home extends React.Component {
   render() {
     return (
@@ -10,7 +15,11 @@ class Home extends React.Component {
           <form className="ui form segment">
             <div className="field">
               <label><i className="calendar alternate outline icon"></i>プレー日</label>
-              <input type='date' />
+              <DatePicker
+                dateFormat="yyyy/MM/dd"
+                selected={Today}
+                minDate={Today}
+              />
             </div>
             <div className="field">
               <label><i className="yen sign icon"></i>上限金額</label>
