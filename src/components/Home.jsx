@@ -31,7 +31,7 @@ class Home extends React.Component {
       this.setState({ loading: true });
 
       const response = await axios.get(
-        'https://brujzwlzm8.execute-api.ap-northeast-1.amazonaws.com/production/golf-courses?budget=13000&date=20201224&departure=1&duration=100',
+        'https://master.d392ulu5hei7dg.amplifyapp.com//golf-courses',
         {
           params: {
             date: format(this.state.date, "yyyyMMdd"),
